@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
@@ -6,10 +6,7 @@ const categorySchema = new Schema({
   name: {
     type: String,
     required: true,
-  },
-  author: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
+    unique: true,
   },
   createdAt: {
     type: Date,
@@ -17,6 +14,6 @@ const categorySchema = new Schema({
   },
 });
 
-const Category = mongoose.model('Category', categorySchema);
+const Category = mongoose.model("Category", categorySchema);
 
 module.exports = Category;
